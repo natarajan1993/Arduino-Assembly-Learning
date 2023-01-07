@@ -34,7 +34,7 @@ outerLoop:
   LDI R31, hi8(delayVal)  ; high byte of delayVal in R31
 innerLoop:
   SBIW R30, 1       ; subtract 1 from 16-bit value in R30, R31
-  BRNE innerLoop    ; Branch if delayVal not equal to 0
+  BRNE innerLoop    ; Branch back to innerLoop if delayVal not equal to 0
 
   SUBI R20, 1       ; Subtract 1 from R20
-  BRNE outerLoop    ; Branch if R20 value is not equal to 0
+  BRNE outerLoop    ; Branch back to outerLoop if R20 value is not equal to 0
